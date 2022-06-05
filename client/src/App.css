@@ -1,0 +1,64 @@
+body {
+  background: #121214;
+  color: #e1e1f6;
+  padding: 0 4rem;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.row > * {
+  width: unset;
+}
+
+img {
+  max-height: 449px;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* scrollbar styling */
+
+::-webkit-scrollbar {
+  height: 10px;
+  border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+  background: #444242;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 10, 10);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(212, 26, 26);
+}
+
+/* scrollbar styling end */
