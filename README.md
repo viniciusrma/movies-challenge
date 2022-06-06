@@ -26,7 +26,18 @@ The application runs in two parts, so you need to open a terminal in both 'serve
 In each, run:
 
 ```sh
+$ cd server
+$ npm install
 
+then
+
+$ npm start
+
+```
+
+```sh
+
+$ cd client
 $ npm install
 
 then
