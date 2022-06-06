@@ -1,34 +1,38 @@
-import { useState } from "react";
-import { Comment } from "../components/Comment";
+import { Link } from "react-router-dom";
 
 export function Index() {
-  const [tweets, setTweets] = useState([
-    "Tweet 1",
-    "Tweet 2",
-    "Tweet 3",
-    "Tweet 4",
-  ]);
-
-  function createTweet() {
-    setTweets([...tweets, "Tweet 5"]);
-  }
-
   return (
     <>
-      {tweets.map((tweet) => {
-        return <Comment text={tweet} />;
-      })}
-      <button
-        onClick={createTweet}
-        style={{
-          backgroundColor: "#8257E6",
-          border: 0,
-          padding: "6px 12px",
-          color: "#f9f9f9",
-        }}
-      >
-        Add tweet
-      </button>
+      <div className="container-fluid">
+        <div className="row m-4 align-items-center justify-content-center">
+          <Link to="/external-catalog">
+            <button
+              style={{
+                backgroundColor: "#8257E6",
+                border: 0,
+                padding: "6px 12px",
+                color: "#f9f9f9",
+              }}
+            >
+              External Catalog
+            </button>
+          </Link>
+        </div>
+        <div className="row m-6 align-items-center justify-content-center">
+          <Link to="/catalog">
+            <button
+              style={{
+                backgroundColor: "#8257E6",
+                border: 0,
+                padding: "6px 12px",
+                color: "#f9f9f9",
+              }}
+            >
+              Catalog
+            </button>
+          </Link>
+        </div>
+      </div>
     </>
   );
 }
