@@ -23,7 +23,7 @@ $ git clone https://github.com/viniciusrma/movies-challenge
 
 The application runs in two parts, so you need to open a terminal in both 'server' and 'client' folders.
 
-In each, run:
+In each terminal, run:
 
 ```sh
 $ cd server
