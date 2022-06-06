@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Catalog from "./pages/Catalog";
 import ExternalCatalog from "./pages/ExternalCatalog";
 import { Index } from "./pages/Index";
-import AddEdit from "./pages/AddEdit"
+import AddEdit from "./pages/AddEdit/AddEdit"
 import View from "./pages/View"
 
 export function AppRoutes() {

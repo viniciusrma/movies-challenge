@@ -6,6 +6,7 @@ import MovieListHeading from "../components/MovieListHeading";
 import SearchBox from "../components/SearchBox";
 import AddFavourite from "../components/AddFavourite";
 import RemoveFavourite from "../components/RemoveFavourites";
+import Header from "../components/Header/Header";
 
 const ExternalCatalog = () => {
   const [movies, setMovies] = useState([]);
@@ -56,8 +57,9 @@ const ExternalCatalog = () => {
 
   return (
     <div>
+      <Header/>
       <div className="container-fluid movie-app">
-        <div className="row mb-4 mt-4 d-flex align-items-center">
+        <div className="row mb-4 mt-4 d-flex align-items-center justify-content-between">
           <MovieListHeading heading="External Catalog - OMDB" />
           <SearchBox
             searchValue={searchValue}
