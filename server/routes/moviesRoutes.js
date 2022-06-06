@@ -7,10 +7,12 @@ router.get("/", async (req, res) => {
     const movies = await Movie.find();
     res.set("Access-Control-Allow-Origin", "*");
     res.status(200).json(movies);
-    res.send({ msg: "This has CORS enabled 🙂",  });
-    
+    res.send({ msg: "This has CORS enabled 🙂" });
+    return;
   } catch (error) {
-    res.status(500).json({ error: error });
+    return res.status(500).send({
+      message: error.message || "some error occured",
+    });
   }
 });
 
