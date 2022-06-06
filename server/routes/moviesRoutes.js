@@ -5,8 +5,10 @@ const Movie = require("../models/Movies");
 router.get("/", async (req, res) => {
   try {
     const movies = await Movie.find();
-
+    res.set("Access-Control-Allow-Origin", "*");
     res.status(200).json(movies);
+    res.send({ msg: "This has CORS enabled 🙂",  });
+    
   } catch (error) {
     res.status(500).json({ error: error });
   }

@@ -17,16 +17,6 @@ app.use(express.json());
 
 app.use("/movie", moviesRoutes);
 
-app.use(
-  cors({
-    allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
-    exposedHeaders: ["authorization"], // you can change the headers
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-  })
-);
-
 app.get("/", (req, res) => res.json({ message: "hello world" }));
 
 const DB_USER = process.env.DB_USER;

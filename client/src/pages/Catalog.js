@@ -1,27 +1,47 @@
 import MovieListHeading from "../components/MovieListHeading";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const Catalog = () => {
   const [movies, setMovies] = useState([]);
 
+  async function getMovies() {
+    try {
+      const response = await fetch("http://localhost:4000/movie", {
+        method: "GET",
+        headers: { accept: "application/json" },
+        mode: "cors",
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setMovies(result);
+      return result;
+    } catch (err) {
+      console.log(err);
+    }
+
+    // const response = await fetch("http://localhost:4000/movie", {
+    //   method: "GET",
+    //   headers: { accept: "application/json" },
+    //   mode: "cors",
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     console.log(res);
+    //     setMovies(res);
+    //   })
+    //   .then((res) => {
+    //     res.status === 200 ? setMovies(res) : console.log("");
+    //   });
+  }
+
   useEffect(() => {
     getMovies();
-  }, []);
-
-  const getMovies = async () => {
-    const response = await axios
-      .get("http://localhost:4000/movie")
-      .then((res) => {
-        res.json();
-      })
-      .then((data) => {
-        setMovies(data);
-      });
-    if (response.status === 200) setMovies(response.data);
-  };
-
-  console.log("data => ", movies);
+    console.log("data => ", movies);
+  }, [movies]);
 
   return (
     <div className="container-fluid movie-app">
