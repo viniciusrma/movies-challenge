@@ -21,7 +21,9 @@ $ git clone https://github.com/viniciusrma/movies-challenge
 
 2. Running the Application:
 
-The application runs in two parts:
+The application runs in two parts, so you need to open a terminal in both 'server' and 'client' folders.
+
+In each, run:
 
 ```sh
 
